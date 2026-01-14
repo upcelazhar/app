@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'login_screen.dart';
+import 'logo.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'NutriSeseSmart',
+      theme: ThemeData(
+        useMaterial3: true,
+        primaryColor: Colors.green,
+        scaffoldBackgroundColor: const Color(0xfff6f3ef),
+      ),
+      // Show logo splash first; LogoScreen will navigate to '/login'
+      home: const LogoScreen(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+      },
+    );
+  }
+}
